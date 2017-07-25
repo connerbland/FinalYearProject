@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.taxi.conner.finaltaxiproject.JourneyRouteActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay" >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From:"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_alignParentStart="true"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="56dp"
+            app:layout_constraintHorizontal_bias="0.029"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <!--
+        <AutoCompleteTextView
+            android:id="@+id/edtLocation"
+            android:layout_width="289dp"
+            android:layout_height="41dp"
+            android:ems="10"
+            android:inputType="text"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="123dp"
+            app:layout_constraintHorizontal_bias="0.533"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+            -->
+
+        <TextView
+            android:id="@+id/txtDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To:"
+            android:layout_below="@+id/edtLocation"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="118dp"
+            app:layout_constraintHorizontal_bias="0.028"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <!--
+        <AutoCompleteTextView
+            android:id="@+id/edtDestination"
+            android:layout_width="289dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="text"
+            android:layout_below="@+id/edtLocation"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="131dp"
+            app:layout_constraintHorizontal_bias="0.533"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+            -->
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:layout_below="@+id/edtDestination"
+            android:layout_alignParentEnd="true"
+            app:layout_constraintLeft_toRightOf="@+id/btnFindRoute"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="178dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnFindRoute"
+            android:layout_width="188dp"
+            android:layout_height="49dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/edtDestination"
+            android:layout_toStartOf="@+id/btnContinue"
+            android:text="Find Route"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="178dp"
+            app:layout_constraintHorizontal_bias="0.068"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <fragment
+            android:id="@+id/place_autocomplete_fragment_location"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_marginRight="21dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="73dp" />
+
+        <fragment
+            android:id="@+id/place_autocomplete_fragment_destination"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_marginRight="21dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="135dp" />
+
+        <fragment
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="320dp"
+            android:layout_height="283dp"
+            tools:context="com.taxi.conner.finaltaxiproject.JourneyRouteActivity"
+            android:layout_below="@+id/btnContinue"
+            android:layout_alignParentStart="true"
+            map:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="226dp"
+            map:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            map:layout_constraintLeft_toLeftOf="parent"
+            map:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginStart="8dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>
